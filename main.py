@@ -53,14 +53,14 @@ def text_file_to_images(file_path, font_path=None, font_size=20, extension='png'
             zipf.writestr(image_name, image_data)
         
         # Write CSV data to zip
-        # csv_buffer = io.StringIO()
-        # csv_writer = csv.writer(csv_buffer)
-        # csv_writer.writerow(['filename', 'words'])  # Write the header
-        # csv_writer.writerows(csv_data)
-        # zipf.writestr(csv_file, csv_buffer.getvalue())
+        csv_buffer = io.StringIO()
+        csv_writer = csv.writer(csv_buffer)
+        csv_writer.writerow(['filename', 'words'])  # Write the header
+        csv_writer.writerows(csv_data)
+        zipf.writestr(csv_file, csv_buffer.getvalue())
         
         # Write text data to zip
-        zipf.writestr(text_file, ''.join(txt_data))
+        # zipf.writestr(text_file, ''.join(txt_data))
     
     print(f"All data saved to {zip_file}")
 
